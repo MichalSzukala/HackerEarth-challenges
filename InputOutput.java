@@ -40,7 +40,7 @@ public class InputOutput {
         System.out.println(number + "! = " + factorial);
 
     }
-// After giving string it will check if red backwards will be this same string
+// After giving string it will check if read backwards will be this same string
     public void stringBackward(){
         System.out.println("Give me a string");
         Scanner scanner = new Scanner(System.in);
@@ -59,7 +59,7 @@ public class InputOutput {
             System.out.println("NO");
 
     }
-// Check if all the numbers before given number and print them if they are prime numbers
+// Check if all the numbers before given number are prime numbers, if so print them
     public void primeNumber(){
         System.out.println("Give me a number");
         Scanner scanner = new Scanner(System.in);
@@ -80,7 +80,7 @@ public class InputOutput {
 
     }
 
-    
+
 
 
 
@@ -88,10 +88,9 @@ public class InputOutput {
 
 
     public static void main(String[] args){
-        InputOutput start = new InputOutput();
-        //start.primeNumber();
-        for(int i = 1; i != 3; i++)
-            System.out.println(i + " ");
+        BasicsOfImplementation start = new BasicsOfImplementation();
+        start.checkArray();
+
 
 
 
