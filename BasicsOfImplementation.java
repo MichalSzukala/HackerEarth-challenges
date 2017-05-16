@@ -40,4 +40,35 @@ public class BasicsOfImplementation {
             System.out.println("NO");
 
     }
+
+    public void sixConsecutiveNumbers(){
+        Boolean oneTest = true;
+        int zeroCount = 0, oneCount = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me binary number");
+        String number = scanner.next();
+
+        for(int i = 0; i < number.length(); i++) {
+            oneTest = true;
+            char singleDigit = number.charAt(i);
+            if(singleDigit == '0') {
+                zeroCount++;
+                oneTest = false;
+            }
+            else {
+                oneCount++;
+            }
+
+            if(!oneTest)
+                oneCount = 0;
+            else
+                zeroCount = 0;
+            if(oneCount > 5 || zeroCount > 5) {
+                System.out.println("Sorry, sorry!");
+                return;
+            }
+
+        }
+        System.out.println("Good luck!");
+    }
 }
