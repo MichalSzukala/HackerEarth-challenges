@@ -1,11 +1,13 @@
 /**
  * Created by Z on 14/05/2017.
  */
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BasicsOfImplementation {
 
-
+//Given an array of integers . Check if all the numbers between minimum and maximum exist
     public void checkArray(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Length of array: ");
@@ -40,7 +42,7 @@ public class BasicsOfImplementation {
             System.out.println("NO");
 
     }
-
+//Input is binary number, if it has 6 zeros, or 6 ones in the row it will print "Sorry
     public void sixConsecutiveNumbers(){
         Boolean oneTest = true;
         int zeroCount = 0, oneCount = 0;
@@ -70,5 +72,45 @@ public class BasicsOfImplementation {
 
         }
         System.out.println("Good luck!");
+    }
+
+//It's checking how many digits is in the string
+    public void numbersInString(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Give me a string");
+        String input = scanner.next();
+        char[] array = input.toCharArray();
+        int count = 0;
+        for(int i = 0; i < array.length; i++) {
+            if(i == 0) {
+                if (Character.isDigit(array[i]))
+                    count++;
+            }
+            else {
+                if (Character.isDigit(array[i]) && Character.isDigit(array[i - 1]) == false)
+                    count++;
+            }
+        }
+        System.out.println(count);
+
+    }
+//Compare two string and check if from one string it's possible to build second string
+    public void swapStrings(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me string 1");
+        String one = scanner.next();
+        System.out.println("Give me string 2");
+        String two = scanner.next();
+        char[] stringOne = one.toCharArray();
+        char[] stringTwo = two.toCharArray();
+        Arrays.sort(stringOne);
+        Arrays.sort(stringTwo);
+
+        if(Arrays.equals(stringOne, stringTwo))
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+
     }
 }
