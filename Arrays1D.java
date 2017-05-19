@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -5,7 +6,7 @@ import java.util.Scanner;
  */
 public class Arrays1D {
 //How many times you need to add one to obtain all numbers above given value
-    void addingOne() {
+    public void addingOne() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Lenght of array? ");
@@ -28,10 +29,51 @@ public class Arrays1D {
             count++;
         }
             System.out.println(count);
+    }
 
+//Will show which number was the most frequent in the array
+    public void frequentNumber(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many numbers");
+        int length = scanner.nextInt();
+        int[] array = new int[length];
+        for(int i = 0; i < length; i++) {
+            System.out.println("Give me number");
+            array[i] = scanner.nextInt();
+        }
+        Arrays.sort(array);
+        int count = 0;
+        int countMax = 0;
+        int number = array[0];
+        for(int i = 1; i < length; i++){
+            if(array[i] == array[i-1]) {
+                count++;
+                if (count > countMax) {
+                    countMax = count;
+                    number = array[i];
+                }
+            }
+             else
+                 count = 0;
+        }
+        System.out.println(number);
+    }
+//If there is 0 in array it will erase value before , and at the end will give sum of all numbers
+    public void removeIfZero(){
+        Scanner scanner = new Scanner(System.in);
+        int length = scanner.nextInt();
+        int[] array = new int[length];
+        for(int i = 0; i < length; i++){
+            array[i] = scanner.nextInt();
+            if(array[i] == 0 && i > 0)
+                array[i-1] = 0;
+        }
 
+        int sum = 0;
+        for(int i = 0; i < length; i++)
+            sum += array[i];
 
-
+        System.out.println(sum);
 
     }
 
