@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Created by Z on 18/05/2017.
  */
 public class Arrays1D {
-//How many times you need to add one to obtain all numbers above given value
+    //How many times you need to add one to obtain all numbers above given value
     public void addingOne() {
         Scanner scanner = new Scanner(System.in);
 
@@ -14,7 +14,7 @@ public class Arrays1D {
         System.out.println("What is min value you want to reach? ");
         int minValue = scanner.nextInt();
         int[] array = new int[arrayLenght];
-        for(int j = 0; j < arrayLenght; j++) {
+        for (int j = 0; j < arrayLenght; j++) {
             System.out.println("Give the number to array: ");
             array[j] = scanner.nextInt();
         }
@@ -28,16 +28,16 @@ public class Arrays1D {
             min++;
             count++;
         }
-            System.out.println(count);
+        System.out.println(count);
     }
 
-//Will show which number was the most frequent in the array
-    public void frequentNumber(){
+    //Will show which number was the most frequent in the array
+    public void frequentNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many numbers");
         int length = scanner.nextInt();
         int[] array = new int[length];
-        for(int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             System.out.println("Give me number");
             array[i] = scanner.nextInt();
         }
@@ -45,37 +45,63 @@ public class Arrays1D {
         int count = 0;
         int countMax = 0;
         int number = array[0];
-        for(int i = 1; i < length; i++){
-            if(array[i] == array[i-1]) {
+        for (int i = 1; i < length; i++) {
+            if (array[i] == array[i - 1]) {
                 count++;
                 if (count > countMax) {
                     countMax = count;
                     number = array[i];
                 }
-            }
-             else
-                 count = 0;
+            } else
+                count = 0;
         }
         System.out.println(number);
     }
-//If there is 0 in array it will erase value before , and at the end will give sum of all numbers
-    public void removeIfZero(){
+
+    //If there is 0 in array it will erase value before , and at the end will give sum of all numbers
+    public void removeIfZero() {
         Scanner scanner = new Scanner(System.in);
         int length = scanner.nextInt();
         int[] array = new int[length];
-        for(int i = 0; i < length; i++){
+        for (int i = 0; i < length; i++) {
             array[i] = scanner.nextInt();
-            if(array[i] == 0 && i > 0)
-                array[i-1] = 0;
+            if (array[i] == 0 && i > 0)
+                array[i - 1] = 0;
         }
 
         int sum = 0;
-        for(int i = 0; i < length; i++)
+        for (int i = 0; i < length; i++)
             sum += array[i];
 
         System.out.println(sum);
 
     }
+
+    //If min valueof the array is in the array odd number of times, than print Lucky
+    public void oddOrEven() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Lenght of array");
+        int arrayLenght = scanner.nextInt();
+        int[] array = new int[arrayLenght];
+        System.out.println("Give the number");
+        array[0] = scanner.nextInt();
+        int min = array[0];
+        int count = 1;
+        for (int j = 1; j < arrayLenght; j++) {
+            array[j] = scanner.nextInt();
+            if (array[j] < min) {
+                min = array[j];
+                count = 1;
+            } else if (min == array[j])
+                count++;
+        }
+        if (count % 2 == 0)
+            System.out.println("Unlucky");
+        else
+            System.out.println("Lucky");
+    }
+
+
 
 
 
