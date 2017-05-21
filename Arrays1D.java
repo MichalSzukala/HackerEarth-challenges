@@ -101,6 +101,25 @@ public class Arrays1D {
             System.out.println("Lucky");
     }
 
+    public void sumOfTwoArrays(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Size of array");
+        int length = scanner.nextInt();
+        int[] A = new int[length];
+        int[] B = new int[length];
+        int[] C = new int[length];
+        for(int i = 0; i < length; i++)
+            A[i] = scanner.nextInt();
+        for(int i = 0; i < length; i++)
+            B[i] = scanner.nextInt();
+        for(int i = 0; i < length; i++) {
+            C[i] = A[i] + B[i];
+            System.out.print(C[i] + " ");
+        }
+
+
+
+    }
 
 
 
