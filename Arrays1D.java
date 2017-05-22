@@ -116,6 +116,25 @@ public class Arrays1D {
             C[i] = A[i] + B[i];
             System.out.print(C[i] + " ");
         }
+    }
+//After giving string it checks if it reads this same from the front as from the reverse
+    public void palindrome() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give a string");
+        String word = scanner.next();
+        Boolean test = false;
+
+        for(int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == word.charAt(word.length() - 1 - i))
+                test = true;
+        }
+
+        if(test && word.length() % 2 == 0)
+            System.out.println("YES" + " EVEN");
+        else if(test && word.length() % 2 == 1)
+            System.out.println("YES" + " ODD");
+        else
+            System.out.println("NO");
 
 
 
