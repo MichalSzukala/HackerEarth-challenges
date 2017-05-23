@@ -100,7 +100,7 @@ public class Arrays1D {
         else
             System.out.println("Lucky");
     }
-
+//It construct 3th array, and put sum of int of two other arrays
     public void sumOfTwoArrays(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Size of array");
@@ -135,7 +135,20 @@ public class Arrays1D {
             System.out.println("YES" + " ODD");
         else
             System.out.println("NO");
+    }
 
+    public void longVovels(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give a string");
+        String word = scanner.next();
+        char[] vovels ={'a', 'e', 'i', 'o','u'};
+        int count = 1;
+        for(int i = 0; i < word.length(); i++)
+            for(int j = 1; j < vovels.length; j++)
+                if(word.charAt(i) == vovels[j] && vovels[j-1] == vovels[j])
+                count++;
+
+        System.out.println(count);
 
 
     }
