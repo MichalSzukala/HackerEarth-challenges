@@ -136,24 +136,88 @@ public class Arrays1D {
         else
             System.out.println("NO");
     }
-
+//Count vovels if they are next to each other and give the biggest number when they were together
     public void longVovels(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Give a string");
         String word = scanner.next();
         char[] vovels ={'a', 'e', 'i', 'o','u'};
-        int count = 1;
-        for(int i = 0; i < word.length(); i++)
-            for(int j = 1; j < vovels.length; j++)
-                if(word.charAt(i) == vovels[j] && vovels[j-1] == vovels[j])
+        int count = 0;
+        int maxCount = 0;
+        boolean test = true;
+        for(int i = 0; i < word.length(); i++) {
+            test = false;
+            for (int j = 0; j < vovels.length; j++) {
+                if (word.charAt(i) == vovels[j]) {
+                    test = true;
+                }
+            }
+            if(test) {
                 count++;
-
-        System.out.println(count);
+                if (count >= maxCount)
+                    maxCount = count;
+            }
+            else
+                count = 0;
+        }
+        System.out.println(maxCount);
 
 
     }
 
 
+    public void rotationInArray(){
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("how big array?");
+        int arrayLenght = scanner.nextInt();
+        System.out.println("how many rotations?");
+        int numberOfRotations = scanner.nextInt();
+        int[] array = new int[arrayLenght];
+        for(int j = 0; j < arrayLenght; j++)
+            array[j] = scanner.nextInt();
+
+        while(numberOfRotations > 0){
+            int temp = array[arrayLenght-1];
+            for(int j = arrayLenght - 1; j > 0; j--)
+                array[j] = array[j - 1];
+            array[0] = temp;
+            numberOfRotations--;
+        }
+        for(int j = 0; j < arrayLenght; j++)
+            System.out.print(array[j] + " ");
+
+    }
+
+    public void swap(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("how big array?");
+        int arrayLenght = scanner.nextInt();
+        int[] array = new int[arrayLenght];
+        for(int j = 0; j < arrayLenght; j++)
+            array[j] = scanner.nextInt();
+        System.out.println("how many rotations?");
+        int numberOfRotations = scanner.nextInt();
+        int temp = 0;
+        while(numberOfRotations > 0){
+            System.out.println("first number to swap?");
+            int one = scanner.nextInt();
+            System.out.println("second number to swap?");
+            int two = scanner.nextInt();
+            temp = array[one + 1]
+            array [one -1] = array[arrayLenght - 1 - i]
+                if(array[i] == one) {
+                    temp = i;
+                    array[i] = array[arrayLenght - 1 - i];
+                    array[arrayLenght - 1 - i] = temp;
+                    break;
+                }
+
+
+            numberOfRotations--;
+        }
+        for(int i = 0; i < arrayLenght; i++)
+            System.out.print(array[i] +" ");
+    }
 
 }
