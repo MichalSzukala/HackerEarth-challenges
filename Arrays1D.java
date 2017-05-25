@@ -165,7 +165,7 @@ public class Arrays1D {
 
     }
 
-
+//Rotate array right some number of rotations
     public void rotationInArray(){
         Scanner scanner = new Scanner(System.in);
 
@@ -189,35 +189,5 @@ public class Arrays1D {
 
     }
 
-    public void swap(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("how big array?");
-        int arrayLenght = scanner.nextInt();
-        int[] array = new int[arrayLenght];
-        for(int j = 0; j < arrayLenght; j++)
-            array[j] = scanner.nextInt();
-        System.out.println("how many rotations?");
-        int numberOfRotations = scanner.nextInt();
-        int temp = 0;
-        while(numberOfRotations > 0){
-            System.out.println("first number to swap?");
-            int one = scanner.nextInt();
-            System.out.println("second number to swap?");
-            int two = scanner.nextInt();
-            temp = array[one + 1]
-            array [one -1] = array[arrayLenght - 1 - i]
-                if(array[i] == one) {
-                    temp = i;
-                    array[i] = array[arrayLenght - 1 - i];
-                    array[arrayLenght - 1 - i] = temp;
-                    break;
-                }
-
-
-            numberOfRotations--;
-        }
-        for(int i = 0; i < arrayLenght; i++)
-            System.out.print(array[i] +" ");
-    }
 
 }
