@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -59,6 +60,23 @@ public class stringManipulation {
         }
         System.out.println(newWord);
     }
+//In the String, if letter was already in the string than don't print it
+    public void removeDuplicates(){
+        Scanner scanner = new Scanner(System.in);
+        String word = scanner.next();
+        char[] wordArray = word.toCharArray();
+        ArrayList<Character> arrayList = new ArrayList<>();
+
+        for(int i = 0; i < wordArray.length; i++) {
+            if (arrayList.contains(wordArray[i]))
+                continue;
+            arrayList.add(wordArray[i]);
+        }
+
+        for(int i = 0; i < arrayList.size(); i++)
+            System.out.print(arrayList.get(i));
+    }
+
 
 }
 
