@@ -65,16 +65,42 @@ public class stringManipulation {
         Scanner scanner = new Scanner(System.in);
         String word = scanner.next();
         char[] wordArray = word.toCharArray();
-        ArrayList<Character> arrayList = new ArrayList<>();
+//        ArrayList<Character> arrayList = new ArrayList<>();
+//
+//        for(int i = 0; i < wordArray.length; i++) {
+//            if (arrayList.contains(wordArray[i]))
+//                continue;
+//            arrayList.add(wordArray[i]);
+//        }
+//
+//        for(int i = 0; i < arrayList.size(); i++)
+//            System.out.print(arrayList.get(i));
 
-        for(int i = 0; i < wordArray.length; i++) {
-            if (arrayList.contains(wordArray[i]))
-                continue;
-            arrayList.add(wordArray[i]);
+        for(int i = wordArray.length - 1; i > 0 ; i--){
+            for(int j = 0; j < wordArray.length - 1 - j; j++) {
+                if (wordArray[i] == wordArray[j])
+                    continue;
+                System.out.println(wordArray[i]);
+            }
         }
 
-        for(int i = 0; i < arrayList.size(); i++)
-            System.out.print(arrayList.get(i));
+    }
+//Check if the word has its revers in the list of words, than print the lenght and middle letter
+    public void findReverseWord(){
+        Scanner scanner = new Scanner(System.in);
+        int numberOfWords = scanner.nextInt();
+        ArrayList<String> array = new ArrayList<String>();
+        for(int i = 0; i < numberOfWords; i++)
+            array.add(scanner.next());
+
+        for(int i = 0; i < array.size(); i++){
+            StringBuilder string = new StringBuilder(array.get(i));
+            string = string.reverse();
+            String stringRevers = new String(string);
+            for(int j = 0; j < array.size(); j++)
+                if (array.get(j).contains(stringRevers))
+                    System.out.print(string.length() + " " + string.charAt(string.length() / 2) + "\n");
+        }
     }
 
 
