@@ -102,7 +102,71 @@ public class stringManipulation {
                     System.out.print(string.length() + " " + string.charAt(string.length() / 2) + "\n");
         }
     }
+//Will change uppercase to lowercase at given index
+//    public void charToUpper(){
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Give a string");
+//        String word = scanner.nextLine();
+//        StringBuilder word1 = new StringBuilder(word);
+//        System.out.println("index of letter you want to change");
+//        int location1 = scanner.nextInt();
+//        System.out.println("index of letter you want to change");
+//        int location2 = scanner.nextInt();
+//        char one = word1.charAt(location1);
+//        if(Character.isUpperCase(one))
+//            one = Character.toLowerCase(one);
+//        else
+//            one = Character.toUpperCase(one);
+//        word1.replace(location1, location1+1, String.valueOf(one));
+//        char two = word1.charAt(location2);
+//        if(Character.isUpperCase(two))
+//            two = Character.toLowerCase(two);
+//        else
+//            two = Character.toUpperCase(two);
+//        word1.replace(location2, location2+1, String.valueOf(two));
+//        System.out.println(word1);
+//    }
+//Will change uppercase to lowercase at given index
+    public void charToUpper() {
+        Scanner ob = new Scanner(System.in);
+        System.out.println("Give a string");
+        String s = ob.nextLine();
+        System.out.println("index of letter you want to change");
+        int n1 = ob.nextInt();
+        System.out.println("index of letter you want to change");
+        int n2 = ob.nextInt();
+        n1--;
+        n2--;
+        char ch[] = s.toCharArray();
+        if (Character.isLowerCase(ch[n1]))
+            ch[n1] -= 32;
+        else if (Character.isUpperCase(ch[n1]))
+            ch[n1] += 32;
+        if (Character.isLowerCase(ch[n2]))
+            ch[n2] -= 32;
+        else if (Character.isUpperCase(ch[n2]))
+            ch[n2] += 32;
+        String st = new String(ch);
+        System.out.println(st);
+    }
+//After giving a full name it will print initials
+    public void printInitials(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give a string");
+        StringBuilder word = new StringBuilder(scanner.nextLine());
+        int upperCaseIndex = 0;
+        for(int i = 0; i < word.length(); i++) {
+            if (Character.isUpperCase(word.charAt(i))){
+                upperCaseIndex= i;
+        }
+            if(Character.isWhitespace(word.charAt(i))) {
+                word.replace(upperCaseIndex + 1, i, ".");
+                i = upperCaseIndex + 2;
+            }
+        }
+        System.out.print(word);
 
+    }
 
 }
 
