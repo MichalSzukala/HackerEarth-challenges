@@ -47,4 +47,30 @@ public class Sorting {
             System.out.println("No");
 
     }
+    //Will show which number was the most frequent in the array
+    public void frequentNumber() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many numbers");
+        int length = scanner.nextInt();
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            System.out.println("Give me number");
+            array[i] = scanner.nextInt();
+        }
+        Arrays.sort(array);
+        int count = 0;
+        int countMax = 0;
+        int number = array[0];
+        for (int i = 1; i < length; i++) {
+            if (array[i] == array[i - 1]) {
+                count++;
+                if (count > countMax) {
+                    countMax = count;
+                    number = array[i];
+                }
+            } else
+                count = 0;
+        }
+        System.out.println(number);
+    }
 }
