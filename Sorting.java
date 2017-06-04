@@ -31,46 +31,63 @@ public class Sorting {
                 }
             }
         }
-        for (int i = 0; i < size; i++)
-            System.out.print(a[i] + " ");
-        System.out.print("\n");
-        for (int i = 0; i < size; i++)
-            System.out.print(b[i] + " ");
-        System.out.println("\n");
-        boolean test = true;
-        for (int i = 0; i < size; i++)
-            if(a[i] < b[i])
-                test = false;
-        if(test)
-            System.out.println("Yes");
-        else
-            System.out.println("No");
-
     }
-    //Will show which number was the most frequent in the array
-    public void frequentNumber() {
+//The rise of the weird... things [1]: https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/practice-problems/algorithm/the-rise-of-the-weird-things-1/
+    public void theRise() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How many numbers");
-        int length = scanner.nextInt();
-        int[] array = new int[length];
-        for (int i = 0; i < length; i++) {
-            System.out.println("Give me number");
-            array[i] = scanner.nextInt();
+        System.out.println("size of array");
+        int size = scanner.nextInt();
+        int[] a = new int[size];
+        int[] b = new int[size + 2];
+        for (int i = 0; i < size; i++)
+            a[i] = scanner.nextInt();
+
+        int evenCount = 0;
+        int oddCount = 0;
+        for (int i = 0; i < size; i++) {
+            if(a[i] % 2 == 0)
+                evenCount++;
+            else
+                oddCount++;
         }
-        Arrays.sort(array);
-        int count = 0;
-        int countMax = 0;
-        int number = array[0];
-        for (int i = 1; i < length; i++) {
-            if (array[i] == array[i - 1]) {
-                count++;
-                if (count > countMax) {
-                    countMax = count;
-                    number = array[i];
+        int min = 0;
+        int temp = 0;
+        int minIndex = 0;
+
+        for (int i = 0; i < size; i++) {
+            min = a[i];
+            minIndex = i;
+
+            for (int j = i + 1; j < size; j++) {
+                if (a[j] < min) {
+                    min = a[j];
+                    minIndex = j;
                 }
-            } else
-                count = 0;
+            }
+            temp = a[i];
+            a[i] = a[minIndex];
+            a[minIndex] = temp;
         }
-        System.out.println(number);
+        int sumEven = 0;
+        int sumOdd = 0;
+        int o = 0;
+        int e = 1;
+        for (int i = 0; i < size; i++) {
+            if (a[i] % 2 == 0) {
+                b[o] = a[i];
+                sumEven += a[i];
+                o++;
+            }
+            else{
+                    b[e + evenCount] = a[i];
+                    sumOdd += a[i];
+                    e++;
+            }
+
+        }
+        b[evenCount] = sumEven;
+        b[size + 1] = sumOdd;
+       for(int i = 0; i < size + 2; i++)
+           System.out.print(b[i] + " ");
     }
 }
