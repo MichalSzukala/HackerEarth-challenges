@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * Created by Z on 25/05/2017.
@@ -17,21 +19,33 @@ public class stringManipulation {
         System.out.println(count);
 
     }
+// String Division: https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/string-division/
+    public void splitingInFour() {
+        Scanner scanner = new Scanner(System.in);
+        int cases = scanner.nextInt();
 
-//    public void splitingInFour() {
-//        Scanner scanner = new Scanner(System.in);
-//        int cases = scanner.nextInt();
-//        while (cases > 0) {
-//            //System.out.println("give a string");
-//            String word = scanner.next();
-//            char[] array = word.toCharArray();
-//            int firstIndex = 0;
-//            for(int i = 0; i < word.length(); i++){
-//                if(array[i] == array[i + 1])
-//            }
-//            cases--;
-//        }
-//    }
+        while (cases > 0) {
+            //System.out.println("give a string");
+            String word = scanner.next();
+            String word1 ="";
+            Set<String> set = new HashSet<String>();
+            int count = 0;
+            for(int i = 0; i < word.length(); i++) {
+                word1 = word1 + word.charAt(i);
+                if (set.add(word1)) {
+                    word1 = "";
+                    count++;
+                }
+            }
+            for(String x : set)
+                System.out.println(x);
+            if(count >= 4)
+                System.out.println("YES");
+            else
+                System.out.println("NO");
+            cases--;
+        }
+    }
 //Print string in reverse order
     public void stringBackword(){
         Scanner scanner = new Scanner(System.in);
