@@ -119,4 +119,30 @@ public class Sorting {
             cases--;
         }
     }
+
+    public void ants(){
+        Scanner scanner = new Scanner(System.in);
+        int n1, n2, n3;
+        int max, min;
+        int cases = scanner.nextInt();
+
+            n1 = scanner.nextInt();
+            n2 = scanner.nextInt();
+            n3 = scanner.nextInt();
+            min = n1;
+            max = n1 + n3;
+        for(int i = 0; i < cases - 1; i++){
+            n1 = scanner.nextInt();
+            n2 = scanner.nextInt();
+            n3 = scanner.nextInt();
+            if(n1 < min)
+                min = n1;
+            if(n1 + n3 > max)
+                max = n1 + n3;
+
+        }
+
+
+        System.out.println(max - min + 1);
+    }
 }
