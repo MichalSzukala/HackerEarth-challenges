@@ -1,11 +1,71 @@
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  * Created by Z on 02/06/2017.
  */
 public class Sorting {
+    String teacher;
+    String student;
+    int age;
+
+    public Sorting(){
+
+    }
+
+    public Sorting(String teacher, String student, int age){
+        this.teacher = teacher;
+        this.student = student;
+        this.age = age;
+    }
+//Monk's School: https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/practice-problems/algorithm/monks-school-4/
+    public void teachaerStudents(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("number of teachers");
+        int numberTeachers = scanner.nextInt();
+        System.out.println("number of students");
+
+        int numberStudents = scanner.nextInt();
+        String[] teacherArray = new String [numberTeachers];
+        Sorting[] studentsArray = new Sorting[numberStudents];
+        String teacher, student;
+        int age;
+
+        for(int i = 0; i < numberTeachers; i++)
+            teacherArray[i] = scanner.next();
+
+        for(int i = 0; i < numberStudents; i++) {
+            teacher = scanner.next();
+            student = scanner.next();
+            age = scanner.nextInt();
+            Sorting object = new Sorting(teacher, student, age);
+            studentsArray[i] = object;
+        }
+        Arrays.sort(teacherArray);
+        Sorting temp;
+        for(int i = 0; i < numberStudents - 1; i++){
+            for(int j = 0; j < numberStudents - 1 - i; j++) {
+                if(studentsArray[j].student.compareTo(studentsArray[j+1].student) > 0){
+                    temp = studentsArray[j];
+                    studentsArray[j] = studentsArray[j+1];
+                    studentsArray[j+1] = temp;
+                }
+
+
+            }
+        }
+        for(int i = 0; i < numberStudents; i++)
+            System.out.println(studentsArray[i].student);
+
+//        for(int i = 0; i < numberTeachers; i++) {
+//            for (int j = 0; i < numberStudents; j++) {
+//
+//            }
+//        }
+
+    }
+
+
 
     //Save Patients: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/practice-problems/algorithm/save-patients/
     public void bubbleSort(){
@@ -93,56 +153,5 @@ public class Sorting {
            System.out.print(b[i] + " ");
     }
 
-    public void splitingInFour() {
-        Scanner scanner = new Scanner(System.in);
-        int cases = scanner.nextInt();
 
-        while (cases > 0) {
-            //System.out.println("give a string");
-            String word = scanner.next();
-            String word1 ="";
-            Set<String> set = new HashSet<String>();
-            int count = 0;
-            for(int i = 0; i < word.length(); i++) {
-                word1 = word1 + word.charAt(i);
-                if (set.add(word1)) {
-                    word1 = "";
-                    count++;
-                }
-            }
-            for(String x : set)
-                System.out.println(x);
-            if(count >= 4)
-                System.out.println("YES");
-            else
-                System.out.println("NO");
-            cases--;
-        }
-    }
-
-    public void ants(){
-        Scanner scanner = new Scanner(System.in);
-        int n1, n2, n3;
-        int max, min;
-        int cases = scanner.nextInt();
-
-            n1 = scanner.nextInt();
-            n2 = scanner.nextInt();
-            n3 = scanner.nextInt();
-            min = n1;
-            max = n1 + n3;
-        for(int i = 0; i < cases - 1; i++){
-            n1 = scanner.nextInt();
-            n2 = scanner.nextInt();
-            n3 = scanner.nextInt();
-            if(n1 < min)
-                min = n1;
-            if(n1 + n3 > max)
-                max = n1 + n3;
-
-        }
-
-
-        System.out.println(max - min + 1);
-    }
 }
