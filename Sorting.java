@@ -50,19 +50,15 @@ public class Sorting {
                     studentsArray[j] = studentsArray[j+1];
                     studentsArray[j+1] = temp;
                 }
-
-
             }
         }
-        for(int i = 0; i < numberStudents; i++)
-            System.out.println(studentsArray[i].student);
-
-//        for(int i = 0; i < numberTeachers; i++) {
-//            for (int j = 0; i < numberStudents; j++) {
-//
-//            }
-//        }
-
+        for(int i = 0; i < numberTeachers; i++) {
+            System.out.println(teacherArray[i]);
+            for (int j = 0; j < numberStudents; j++) {
+                if(studentsArray[j].teacher.equals(teacherArray[i]))
+                    System.out.println(studentsArray[j].student + " " + studentsArray[j].age);
+            }
+        }
     }
 
 
