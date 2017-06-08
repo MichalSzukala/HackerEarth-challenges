@@ -60,7 +60,32 @@ public class Sorting {
             }
         }
     }
+//Puchi and Luggage: https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/practice-problems/algorithm/puchi-and-luggage/
+    public void luggage(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("number of cases");
+        int cases = scanner.nextInt();
+        while(cases > 0) {
+            System.out.println("number of friends");
+            int friends = scanner.nextInt();
+            int[] weight = new int[friends];
+            for (int i = 0; i < friends; i++)
+                weight[i] = scanner.nextInt();
 
+
+            for (int i = 0; i < friends; i++){
+                int count = 0;
+                for (int j = i + 1; j < friends; j++){
+                    if(weight[j] <weight[i])
+                        count++;
+                }
+                System.out.print(count + " ");
+            }
+            System.out.println();
+
+            cases--;
+        }
+    }
 
 
     //Save Patients: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/practice-problems/algorithm/save-patients/
