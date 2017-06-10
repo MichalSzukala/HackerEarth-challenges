@@ -113,4 +113,17 @@ public class BasicsOfImplementation {
             System.out.println("NO");
 
     }
+
+    public void whiteSpaces(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give me string");
+        String string = scanner.nextLine();
+        int count = 0;
+        for(int i = 0; i < string.length(); i++)
+            if(string.charAt(i) == ' ')
+                count++;
+        System.out.println(count);
+
+    }
+
 }
