@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -43,7 +44,33 @@ public class Searching{
         }
 
     }
+//Repeated K Times: https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/repeated-k-times/
+    public void smallestRepeted(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("how many numbers");
+        int numbers = scanner.nextInt();
+        int[] numberArray = new int[numbers];
+        for(int i = 0; i < numbers; i++) {
+            System.out.println("Give a number");
+            numberArray[i] = scanner.nextInt();
+        }
+        Arrays.sort(numberArray);
+        System.out.println("How many times smalles number should repeat? ");
+        int howManyrepeat = scanner.nextInt();
+        int howManyrepeat1 = howManyrepeat;
+        for(int i = 0; i < numbers-1; i++) {
+            if (numberArray[i] == numberArray[i+1]) {
+                howManyrepeat1--;
+                if(howManyrepeat1 == 1){
+                    System.out.println(numberArray[i]);
+                    return;
+                }
+            }
+            else
+                howManyrepeat1 = howManyrepeat;
+        }
 
+    }
 
 
 }
