@@ -71,6 +71,32 @@ public class Searching{
         }
 
     }
+//Sherlock and Numbers: https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/sherlock-and-numbers/
+    public void sherlock(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("how many cases");
+        int cases = scanner.nextInt();
+        boolean test = true;
+        while(cases > 0){
+            int number = scanner.nextInt();
+            int howManyRemove = scanner.nextInt();
+            int giveBackNumber = scanner.nextInt();
+            for(int i = 0; i < howManyRemove; i++){
+                int remove = scanner.nextInt();
+                if(giveBackNumber > number - howManyRemove) {
+                    System.out.println("-1");
+                    test = false;
+                    break;
+                }
+                else if(remove < giveBackNumber)
+                    giveBackNumber++;
+            }
+            if(test)
+                System.out.println(giveBackNumber);
+            cases--;
+        }
+
+    }
 
 
 }
