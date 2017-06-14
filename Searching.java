@@ -97,6 +97,43 @@ public class Searching{
         }
 
     }
+//Discover the Monk: https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/discover-the-monk/
+    public void binarySearch(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("size of array");
+        int arraySize = scanner.nextInt();
+        int[] array = new int[arraySize];
+        System.out.println("how many cases");
+        int cases = scanner.nextInt();
+        for(int i = 0; i < array.length; i++) {
+            System.out.println("give a number");
+            array[i] = scanner.nextInt();
+        }
+        Arrays.sort(array);
+        while (cases > 0) {
+            System.out.println("what number to find");
+            int find = scanner.nextInt();
+            int low = 0;
+            int high = arraySize-1;
+            boolean test = false;
+            while(low <= high){
+                int mid = (low + high)/2;
+                if(array[mid] < find)
+                    low = mid + 1;
+                else if(array[mid] > find)
+                    high = mid - 1;
+                else {
+                    System.out.println("YES");
+                    test = true;
+                    break;
+                }
+            }
+            if(!test)
+                System.out.println("NO");
+            cases--;
+        }
+
+    }
 
 
 }
