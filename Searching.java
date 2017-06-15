@@ -135,5 +135,35 @@ public class Searching{
 
     }
 
+    public void polynominal(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many cases");
+        int cases = scanner.nextInt();
+        System.out.println("Equation is A*x^2 + B*x + C >= K");
+
+        while(cases > 0) {
+            System.out.println("Give A");
+            int a = scanner.nextInt();
+            System.out.println("give B");
+            int b = scanner.nextInt();
+            System.out.println("give C");
+            int c = scanner.nextInt();
+            System.out.println("give K");
+            int k = scanner.nextInt();
+            int x = 0;
+
+            while ((a * x * x) + (b * x) + c < k) {
+                int d = (a * x * x) + (b * x) + c;
+                x++;
+            }
+            System.out.println(x);
+            cases--;
+        }
+
+
+
+
+    }
+
 
 }
