@@ -160,11 +160,40 @@ public class Searching{
             System.out.println(x);
             cases--;
         }
+    }
 
+    public void bishu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How big array");
+        int arraySize = scanner.nextInt();
+        int[] array = new int[arraySize];
+        for(int i = 0; i < arraySize; i++)
+            array[i] = scanner.nextInt();
+        System.out.println("How many cases");
+        int cases = scanner.nextInt();
+        Arrays.sort(array);
 
-
+        while(cases > 0){
+            System.out.println("the number");
+            int number = scanner.nextInt();
+            int sum = 0;
+            int howMany = 0;
+            for(int i = 0; i < arraySize; i++) {
+                if (array[i] <= number) {
+                    sum += array[i];
+                    howMany++;
+                }
+                else
+                    break;
+            }
+            System.out.print(howMany + " " + sum);
+            cases--;
+        }
 
     }
+
+
+
 
 
 }
