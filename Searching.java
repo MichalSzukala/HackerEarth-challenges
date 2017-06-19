@@ -135,7 +135,7 @@ public class Searching{
 
     }
 
-
+//Monk's Encounter with Polynomial: https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/monks-encounter-with-polynomial/
     public void polynominal(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many cases");
@@ -162,6 +162,7 @@ public class Searching{
         }
     }
 
+    //Bishu and Soldiers: https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/bishu-and-soldiers/
     public void bishu(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("How big array");
