@@ -62,7 +62,7 @@ public class Stacks {
         String task = null;
         int k = 0;
         int monkStackValue = 0;
-stack.
+
         for(int i = 0; i < numberOftasks; i++){
             task = scanner.next();
             if(task.equals("Harry")){
@@ -88,5 +88,30 @@ stack.
 
 
 
+    }
+//Little Monk and Balanced Parentheses: https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/little-monk-and-balanced-parentheses/
+    public void balance(){
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+        for(int i = 0; i < size; i++)
+            array[i] = scanner.nextInt();
+
+        Stack<Integer> stack = new Stack<Integer>();
+        int lastValue = 0;
+        int counter = 0;
+
+        for(int i = 0; i < size; i++){
+            if(!stack.empty()) {
+                lastValue = stack.peek();
+            }
+            stack.push(array[i]);
+            if(stack.peek() + lastValue == 0 && lastValue > 0){
+                counter++;
+                stack.pop();
+                stack.pop();
+            }
+        }
+        System.out.println(counter * 2);
     }
 }
