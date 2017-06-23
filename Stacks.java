@@ -100,18 +100,27 @@ public class Stacks {
         Stack<Integer> stack = new Stack<Integer>();
         int lastValue = 0;
         int counter = 0;
+        int maxCounter = 0;
 
         for(int i = 0; i < size; i++){
             if(!stack.empty()) {
                 lastValue = stack.peek();
             }
             stack.push(array[i]);
+
             if(stack.peek() + lastValue == 0 && lastValue > 0){
                 counter++;
                 stack.pop();
                 stack.pop();
+                if(counter > maxCounter)
+                    maxCounter = counter;
             }
+            else if(stack.size() > 1)
+                counter = 0;
+
+            if(lastValue == 0 && stack.peek() < 0)
+                stack.pop();
         }
-        System.out.println(counter * 2);
+        System.out.println(maxCounter * 2);
     }
 }
