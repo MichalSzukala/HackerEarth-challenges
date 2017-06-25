@@ -4,7 +4,7 @@ import java.util.Scanner;
  * Created by Z on 24/06/2017.
  */
 public class NumberTheory {
-
+// Can you Guess: https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/can-you-guess/
     public void allDivisors(){
         Scanner scanner = new Scanner(System.in);
         int cases = scanner.nextInt();
@@ -20,7 +20,6 @@ public class NumberTheory {
             cases--;
             System.out.println(sum);
         }
-
-
     }
+
 }
