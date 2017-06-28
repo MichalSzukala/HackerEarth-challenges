@@ -29,7 +29,7 @@ public class NumberTheory {
         else
             return number * factorial(number - 1);
     }
-
+//Help Oz: https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/a-simple-task/
     public void helpOz() {
         Scanner scanner = new Scanner(System.in);
         int size = scanner.nextInt();
