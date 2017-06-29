@@ -58,6 +58,21 @@ public class NumberTheory {
         }
     }
 
+    public void bigPower(){
+        Scanner scanner = new Scanner(System.in);
+        double base = scanner.nextInt();
+        int power = scanner.nextInt();
+        double result = 1d;
+        double m = 10000000007d;
+        while(power > 0){
+            if(power % 2 ==1)
+                result=(result % m * base % m ) % m;
+            base=(base % m *base % m) % m;
+            power=power/2;
+        }
+        System.out.println(result);
+    }
+
 
 
 
