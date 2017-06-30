@@ -57,18 +57,18 @@ public class NumberTheory {
                 System.out.print(i + " ");
         }
     }
-
+//Calculate the Power: https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/calculate-the-power/
     public void bigPower(){
         Scanner scanner = new Scanner(System.in);
         double base = scanner.nextInt();
         int power = scanner.nextInt();
-        double result = 1d;
-        double m = 10000000007d;
+        double result = 1;
+
         while(power > 0){
-            if(power % 2 ==1)
-                result=(result % m * base % m ) % m;
-            base=(base % m *base % m) % m;
-            power=power/2;
+            if(power % 2 == 1)
+                result = (result * base);
+            base = (base * base);
+            power = power / 2;
         }
         System.out.println(result);
     }
