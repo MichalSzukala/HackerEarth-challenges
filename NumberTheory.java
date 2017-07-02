@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -81,6 +83,27 @@ public class NumberTheory {
         return GCD(number2, number1%number2);
     }
 
+    public void two(){
+        //Danny !
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        int k = scanner.nextInt();
+        int[] a = new int[size];
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        for (int i = 0; i < size; i++)
+            a[i] = scanner.nextInt();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if(a[i] < a[j])
+                    array.add(Math.abs(a[i] - a[j]));
 
+
+            }
+        }
+        Collections.sort(array);
+        System.out.println(array.get(k));
+
+
+    }
 
 }
