@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -81,6 +79,30 @@ public class NumberTheory {
             return number1;
 
         return GCD(number2, number1%number2);
+    }
+// The Confused Monk: https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/the-confused-monk/
+    public void confusedMonk(){
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+        int m = 1000000007;
+        long functionX = 1;
+
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+            functionX = (functionX * array[i]) % m;
+
+        }
+        int gcd = array[0];
+        for(int i = 1; i < size; i++)
+            gcd = GCD(gcd, array[i]);
+        long result = 1;
+
+        for(int i = 0; i < gcd; i++)
+            result = (result * functionX) % m;
+
+        System.out.println(result % m);
+
     }
 
 
