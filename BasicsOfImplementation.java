@@ -125,5 +125,11 @@ public class BasicsOfImplementation {
         System.out.println(count);
 
     }
+//ASCII Value: https://www.hackerearth.com/practice/algorithms/dynamic-programming/state-space-reduction/practice-problems/algorithm/ascii-value/
+    public void ascii(){
+        Scanner scanner = new Scanner(System.in);
+        char character = scanner.next().charAt(0);
+        System.out.println((int)character);
+    }
 
 }
