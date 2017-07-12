@@ -131,5 +131,6 @@ public class BasicsOfImplementation {
         char character = scanner.next().charAt(0);
         System.out.println((int)character);
     }
+    //
 
 }
