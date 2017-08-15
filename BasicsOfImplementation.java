@@ -1,13 +1,9 @@
-/**
- * Created by Z on 14/05/2017.
- */
-
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class BasicsOfImplementation {
 
-//Given an array of integers . Check if all the numbers between minimum and maximum exist
+    //Given an array of integers . Check if all the numbers between minimum and maximum exist
     public void checkArray(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Length of array: ");
@@ -42,7 +38,7 @@ public class BasicsOfImplementation {
             System.out.println("NO");
 
     }
-//Input is binary number, if it has 6 zeros, or 6 ones in the row it will print "Sorry
+    //Input is binary number, if it has 6 zeros, or 6 ones in the row it will print "Sorry
     public void sixConsecutiveNumbers(){
         Boolean oneTest = true;
         int zeroCount = 0, oneCount = 0;
@@ -74,7 +70,7 @@ public class BasicsOfImplementation {
         System.out.println("Good luck!");
     }
 
-//It's checking how many digits is in the string
+    //It's checking how many digits is in the string
     public void numbersInString(){
         Scanner scanner = new Scanner(System.in);
 
@@ -95,7 +91,7 @@ public class BasicsOfImplementation {
         System.out.println(count);
 
     }
-//Compare two string and check if from one string it's possible to build second string
+    //Compare two string and check if from one string it's possible to build second string
     public void swapStrings(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Give me string 1");
@@ -125,7 +121,7 @@ public class BasicsOfImplementation {
         System.out.println(count);
 
     }
-//ASCII Value: https://www.hackerearth.com/practice/algorithms/dynamic-programming/state-space-reduction/practice-problems/algorithm/ascii-value/
+    //ASCII Value: https://www.hackerearth.com/practice/algorithms/dynamic-programming/state-space-reduction/practice-problems/algorithm/ascii-value/
     public void ascii(){
         Scanner scanner = new Scanner(System.in);
         char character = scanner.next().charAt(0);
@@ -133,4 +129,33 @@ public class BasicsOfImplementation {
     }
 
 
+    public void greatKhan(){
+        Scanner scanner = new Scanner(System.in);
+        int lenght = scanner.nextInt();
+        int[] array = new int[lenght];
+
+        for(int i = 0; i < lenght; i++)
+            array[i] = scanner.nextInt();
+
+        int number = 0;
+        for(int i = 0; i < 3; i++) {
+            //int result = number;
+            int sum = 0;
+            for (int j = 0; j < lenght; j += 3 ){
+                 sum += array[j + number];
+            }
+            System.out.print(sum + " ");
+            number++;
+
+        }
+    }
+
+
 }
+
+
+
+
+
+
+
