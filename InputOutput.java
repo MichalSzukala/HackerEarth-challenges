@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class InputOutput {
 
-// All char in upper case will be in lower case and vice versa
+    // All char in upper case will be in lower case and vice versa
     public void toggleString(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Give me a string");
@@ -27,7 +27,7 @@ public class InputOutput {
         System.out.println(nowa);
     }
 
-// Will give factors of the number
+    // Will give factors of the number
     public void factorial() {
         System.out.println("Give me a number");
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class InputOutput {
         System.out.println(number + "! = " + factorial);
 
     }
-// After giving string it will check if read backwards will be this same string
+    // After giving string it will check if read backwards will be this same string
     public void stringBackward(){
         System.out.println("Give me a string");
         Scanner scanner = new Scanner(System.in);
@@ -59,7 +59,7 @@ public class InputOutput {
             System.out.println("NO");
 
     }
-// Check if all the numbers before given number are prime numbers, if so print them
+    // Check if all the numbers before given number are prime numbers, if so print them
     public void primeNumber(){
         System.out.println("Give me a number");
         Scanner scanner = new Scanner(System.in);
@@ -74,28 +74,70 @@ public class InputOutput {
             if (test == true)
                 System.out.print(primeNumbers + " ");
         }
+    }
+    //Count Divisors - https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/count-divisors/
+    public void countDivisors(){
+        Scanner s = new Scanner(System.in);
+        int l = s.nextInt();
+        int r = s.nextInt();
+        int k = s.nextInt();
+        int count = 0;
 
-
-
+        for (int i = l; i <=r; i++) {
+            if(i % k == 0){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+    //Roy and Profile Picture: https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/roy-and-profile-picture/
+    public void picture() {
+        Scanner scanner = new Scanner(System.in);
+        int lenght = scanner.nextInt();
+        int numberPhotos = scanner.nextInt();
+        for (int i = 0; i < numberPhotos; i++) {
+            int width = scanner.nextInt();
+            int hight = scanner.nextInt();
+            if (width < lenght || hight < lenght)
+                System.out.println("UPLOAD ANOTHER");
+            else {
+                if (width == hight)
+                    System.out.println("ACCEPTED");
+                else
+                    System.out.println("CROP IT");
+            }
+        }
 
     }
-
-
-
 
 
 
 
 
     public static void main(String[] args){
+
         BasicsOfImplementation start = new BasicsOfImplementation();
-        start.checkArray();
-
-
-
+        start.greatKhan();
 
 
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

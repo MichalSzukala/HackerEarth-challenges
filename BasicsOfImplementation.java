@@ -128,7 +128,7 @@ public class BasicsOfImplementation {
         System.out.println((int)character);
     }
 
-
+//The Great Kian: https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/the-great-kian/
     public void greatKhan(){
         Scanner scanner = new Scanner(System.in);
         int lenght = scanner.nextInt();
@@ -140,13 +140,14 @@ public class BasicsOfImplementation {
         int number = 0;
         for(int i = 0; i < 3; i++) {
             //int result = number;
-            int sum = 0;
+            long sum = 0;
+
             for (int j = 0; j < lenght; j += 3 ){
-                 sum += array[j + number];
+                if(j + number < lenght)
+                    sum += array[j + number];
             }
             System.out.print(sum + " ");
             number++;
-
         }
     }
 
