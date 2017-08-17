@@ -150,6 +150,27 @@ public class BasicsOfImplementation {
             number++;
         }
     }
+//Digit Problem: https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/digit-problem/
+    public void digits(){
+        Scanner scanner = new Scanner(System.in);
+        String digit = scanner.next();
+        int number = scanner.nextInt();
+        char[] digitArray = digit.toCharArray();
+
+        for(int i = 0; i < digit.length(); i++) {
+//            if (digitArray[i] < 57 && number > 0) {
+//                digitArray[i] = 57;
+//                number--;
+//            }
+
+            if (digitArray[i] < '9' && number > 0) {
+                digitArray[i] = '9';
+                number--;
+            }
+        }
+        for(int i = 0; i < digit.length(); i++)
+            System.out.print(digitArray[i]);
+    }
 
 
 }
